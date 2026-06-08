@@ -19,8 +19,6 @@ public class TypeAssuranceRepository implements ICrud<TypeAssurance> {
     @Override
     public List<TypeAssurance> getAll() {
         List<TypeAssurance> TypeAssurances ;
-
-        entityManager.getTransaction().begin();
         TypeAssurances = entityManager.createQuery("FROM TypeAssurance").getResultList();       //JPQL
 
         return TypeAssurances;

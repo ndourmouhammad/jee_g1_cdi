@@ -26,7 +26,6 @@ public class TypeAssurance {
         return "TypeAssurance{" +
                 "id=" + id +
                 ", libelle='" + libelle + '\'' +
-
                 '}';
     }
 }
