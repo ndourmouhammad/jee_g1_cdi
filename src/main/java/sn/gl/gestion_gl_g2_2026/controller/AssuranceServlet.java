@@ -1,5 +1,7 @@
 package sn.gl.gestion_gl_g2_2026.controller;
 
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -17,16 +19,14 @@ import java.util.List;
 
 
 @WebServlet(name = "assurance", value = "/assurance")
+@RequestScoped
 public class AssuranceServlet extends HttpServlet {
 
+    @Inject
     private ICrud<Assurance> assuranceRepository;
-    private ICrud<TypeAssurance> typeRepository;
 
-    @Override
-    public void init() throws ServletException {
-        this.assuranceRepository = new AssuranceRepository();
-        this.typeRepository = new TypeAssuranceRepository();
-    }
+    @Inject
+    private ICrud<TypeAssurance> typeRepository;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
