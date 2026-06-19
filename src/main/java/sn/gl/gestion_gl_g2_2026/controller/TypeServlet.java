@@ -30,24 +30,24 @@ public class TypeServlet extends HttpServlet {
         RequestDispatcher requestDispatcher;
         switch (action){
             case "add":
-               requestDispatcher = req.getRequestDispatcher("type/add.jsp");
+               requestDispatcher = req.getRequestDispatcher("/type/add.jsp");
                 requestDispatcher.forward(req,resp);
                 break;
             case "delete":
                 int id = Integer.parseInt(req.getParameter("id"));
                 typeRepository.delete(id);
-                resp.sendRedirect("?action=");
+                resp.sendRedirect(req.getContextPath() + "/type?action=");
                 break;
             case "edit":
                 TypeAssurance typeAssurance = typeRepository.get(Integer.parseInt(req.getParameter("id")));
                 req.setAttribute("type",typeAssurance);
-                requestDispatcher = req.getRequestDispatcher("type/edit.jsp");
+                requestDispatcher = req.getRequestDispatcher("/type/edit.jsp");
                 requestDispatcher.forward(req,resp);
 
             default:
                 List<TypeAssurance> list = this.typeRepository.getAll();
                 req.setAttribute("types", list);
-                requestDispatcher = req.getRequestDispatcher("type/list.jsp");
+                requestDispatcher = req.getRequestDispatcher("/type/list.jsp");
                 requestDispatcher.forward(req,resp);
 
         }
@@ -73,8 +73,6 @@ public class TypeServlet extends HttpServlet {
                 typeRepository.insert(typeAssurance);
                 break;
         }
-        resp.sendRedirect("?action=");
-
-
+        resp.sendRedirect(req.getContextPath() + "/type?action=");
     }
 }
