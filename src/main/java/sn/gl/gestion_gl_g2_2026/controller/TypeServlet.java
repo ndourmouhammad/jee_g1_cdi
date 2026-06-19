@@ -1,5 +1,7 @@
 package sn.gl.gestion_gl_g2_2026.controller;
 
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -14,14 +16,12 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(name = "type", value = "/type")
+@RequestScoped
 public class TypeServlet extends HttpServlet {
 
+    @Inject
     private ICrud<TypeAssurance> typeRepository;
 
-    @Override
-    public void init() throws ServletException {
-        this.typeRepository = new TypeAssuranceRepository();
-    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
