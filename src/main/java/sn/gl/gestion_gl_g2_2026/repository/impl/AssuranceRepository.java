@@ -2,16 +2,16 @@ package sn.gl.gestion_gl_g2_2026.repository.impl;
 
 
 
-import jakarta.enterprise.context.ApplicationScoped;
+
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import sn.gl.gestion_gl_g2_2026.entity.Assurance;
 import sn.gl.gestion_gl_g2_2026.repository.ICrud;
-import sn.gl.gestion_gl_g2_2026.utils.JPAUtil;
 
 import java.util.List;
 
-@ApplicationScoped
+@RequestScoped
 public class AssuranceRepository implements ICrud<Assurance> {
 
     @Inject
