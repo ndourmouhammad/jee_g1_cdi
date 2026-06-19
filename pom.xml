@@ -18,6 +18,20 @@
     </properties>
 
     <dependencies>
+        <!-- CDI API Jakarta -->
+        <dependency>
+            <groupId>jakarta.enterprise</groupId>
+            <artifactId>jakarta.enterprise.cdi-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Weld = implémentation CDI pour Tomcat -->
+        <dependency>
+            <groupId>org.jboss.weld.servlet</groupId>
+            <artifactId>weld-servlet-shaded</artifactId>
+            <version>5.1.2.Final</version>
+        </dependency>
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
@@ -53,6 +67,7 @@
             <version>1.18.46</version>
             <scope>compile</scope>
         </dependency>
+
     </dependencies>
 
     <build>
