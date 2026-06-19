@@ -2,6 +2,8 @@ package sn.gl.gestion_gl_g2_2026.repository.impl;
 
 
 
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import sn.gl.gestion_gl_g2_2026.entity.Assurance;
 import sn.gl.gestion_gl_g2_2026.repository.ICrud;
@@ -9,27 +11,25 @@ import sn.gl.gestion_gl_g2_2026.utils.JPAUtil;
 
 import java.util.List;
 
+@ApplicationScoped
 public class AssuranceRepository implements ICrud<Assurance> {
 
+    @Inject
     private EntityManager entityManager;
-
-    public AssuranceRepository() {
-        this.entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
-    }
 
     @Override
     public List<Assurance> getAll() {
         List<Assurance> assurances ;
-        assurances = entityManager.createQuery("FROM Assurance").getResultList();       //JPQL
+        assurances = entityManager.createQuery("FROM Assurance").getResultList();
 
        return assurances;
     }
 
     @Override
     public void insert(Assurance assurance) {
-        this.entityManager.getTransaction().begin(); //demarrer la transaction
+        this.entityManager.getTransaction().begin();
         this.entityManager.persist(assurance);
-        this.entityManager.getTransaction().commit(); //save la transaction
+        this.entityManager.getTransaction().commit();
     }
 
     @Override
