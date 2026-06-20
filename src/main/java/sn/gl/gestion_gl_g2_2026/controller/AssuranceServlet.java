@@ -11,8 +11,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import sn.gl.gestion_gl_g2_2026.entity.Assurance;
 import sn.gl.gestion_gl_g2_2026.entity.TypeAssurance;
 import sn.gl.gestion_gl_g2_2026.repository.ICrud;
-import sn.gl.gestion_gl_g2_2026.repository.impl.AssuranceRepository;
-import sn.gl.gestion_gl_g2_2026.repository.impl.TypeAssuranceRepository;
 
 import java.io.IOException;
 import java.util.List;
@@ -27,6 +25,7 @@ public class AssuranceServlet extends HttpServlet {
 
     @Inject
     private ICrud<TypeAssurance> typeRepository;
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

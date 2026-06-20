@@ -2,8 +2,7 @@ package sn.gl.gestion_gl_g2_2026.repository.impl;
 
 
 
-
-import jakarta.enterprise.context.RequestScoped;
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import sn.gl.gestion_gl_g2_2026.entity.TypeAssurance;
@@ -11,7 +10,7 @@ import sn.gl.gestion_gl_g2_2026.repository.ICrud;
 
 import java.util.List;
 
-@RequestScoped
+@ApplicationScoped
 public class TypeAssuranceRepository implements ICrud<TypeAssurance> {
 
     @Inject

@@ -10,7 +10,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import sn.gl.gestion_gl_g2_2026.entity.TypeAssurance;
 import sn.gl.gestion_gl_g2_2026.repository.ICrud;
-import sn.gl.gestion_gl_g2_2026.repository.impl.TypeAssuranceRepository;
 
 import java.io.IOException;
 import java.util.List;
